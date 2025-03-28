@@ -2,6 +2,7 @@ function [words, index, list_embeddings, max_score] = select_next_word_ranking(p
     previous_index, list_embeddings, mu, sigma, noise_factor, scale, N_particles, max_permuations)
 %SELECT NEXT WORD RANKING Select greedily the next word to add to the set for query based on
 %heuristic of entropy ratios: H(Expectation(Y)) / E(H(Y)) for query of word ranking.
+    N_prev = size(previous_words, 2);
     if nargin < 8
         N_particles = max(200, int32(2e4 / factorial(N_prev + 1)));
     end
@@ -10,7 +11,6 @@ function [words, index, list_embeddings, max_score] = select_next_word_ranking(p
     end
     
     N_words = size(list_embeddings, 2);
-    N_prev = size(previous_words, 2);
     p_y1_xandtheta = @(theta, S) 1 ./ (1 + exp(- noise_factor * (theta' * S))); 
     softmax_num = @(theta, S) exp((scale * (theta' * S)));
     % Sample and normalize particles
