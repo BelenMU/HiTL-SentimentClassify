@@ -33,6 +33,9 @@ The remaining functions are auxiliary
 
 init_SocialSent_freq contains data from SocialSent (https://nlp.stanford.edu/projects/socialsent/) from which we simulate human answers.
 
+## Python
+The folder 'python' contains an equivalent implementation of the code in Python. It reproduces the main algorithm and experiments from the MATLAB version using Python libraries.
+
 ## Replicating Figures
 
 #### Figure 1
