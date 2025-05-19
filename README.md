@@ -33,6 +33,10 @@ The remaining functions are auxiliary
 
 init_SocialSent_freq contains data from SocialSent (https://nlp.stanford.edu/projects/socialsent/) from which we simulate human answers.
 
+
+## Python
+The folder 'python' contains the equivalent implementatin of the Code for Python.
+
 ## Replicating Figures
 
 #### Figure 1
