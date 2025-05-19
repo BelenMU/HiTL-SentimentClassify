@@ -5,7 +5,7 @@ function ranking_init(filename,init, N_S)
 %in 'filename_init#.mat'
     %% Initialize
     load("init_SocialSent_freq.mat");
-    N_iterations = 2e3;
+    N_iterations = 400;
     noise_factor = 12; % Of the label given the example
 
     end_mu = zeros(d+1, 1);
@@ -15,6 +15,9 @@ function ranking_init(filename,init, N_S)
     MSE_MT = zeros(N_iterations+1, 1);
     accu = zeros(N_iterations+1, 1);
     max_score = zeros(N_iterations, 1);
+
+    % Initializevector to hold indices
+    indices_vector = zeros(N_S, N_iterations);
 
 
     mu = mvnrnd(mu_init, C_init)';
@@ -33,7 +36,12 @@ function ranking_init(filename,init, N_S)
                                                         ind_S, list_embeddings_remaining, mu, sigma, ...
                                                         noise_factor, scale);
         end
-        max_score(ii) = max_score;
+
+        %Save indices from this iteration
+        indices_vector(:, ii) = ind_S(:);
+       
+
+	 max_score(ii) = max_score;
         % Model Human
         % Sample Score a human would give to each of the words
         sample_score = list_score(ind_S) + randn(N_S, 1) .* sqrt(list_var(ind_S));
@@ -58,6 +66,12 @@ function ranking_init(filename,init, N_S)
         end
     end
     % Save Filename
-    filename_init = filename + '_S' + num2str(N_S) + '_init' + num2str(init) + '.mat';
-    save(filename_init, end_mu, end_sigma, mu_save, C_diag_norm, MSE_MT, accu, max_score)
+
+
+    filename_init = filename + "_S" + num2str(N_S) + "_init" + num2str(init) + ".mat";
+    disp("naming file");
+
+
+    save(filename_init, 'end_mu', 'end_sigma', 'mu_save', 'C_diag_norm', 'MSE_MT', 'accu', 'max_score', 'indices_vector')
+    disp("saving file");
 end
