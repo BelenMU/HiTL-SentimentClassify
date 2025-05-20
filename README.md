@@ -13,7 +13,7 @@ Matlab R2023a with
 - Optimization Toolbox version 9.4
 - Parallel Computing Toolbox version 7.7
 
-## Matlab
+## MATLAB
 The folder 'matlab' contains the implementation of the Algorithm in MATLAB.
 
 'main.m' contains the implementation of Algorithm 2. To configure the various setting, the following parameters in 'main.m' should be set:
