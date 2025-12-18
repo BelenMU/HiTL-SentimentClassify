@@ -1,10 +1,10 @@
-# Enhancing Human-in-the-Loop Learning for Binary Sentiment Word Classification
+# Beyond Labels: Information-Efficient Human-in-the-Loop Learning via Ranking and Selection Queries
 
-This repository contains the MATLAB code for the paper titled "Enhancing Human-in-the-Loop Learning for Binary Sentiment Word Classification," authored by Belen Martin-Urcelay, Christopher J. Rozell, and Matthieu R. Bloch, 2024.
+This repository contains the MATLAB and Python code for the paper titled "Beyond Labels: Information-Efficient Human-in-the-Loop Learning via Ranking and Selection Queries," authored by Belen Martin-Urcelay, Yoonsang Lee, Matthieu R. Bloch, and Christopher J. Rozell, 2024.
 
 ## Abstract
 
-Humans intuitively excel at classifying words according to their connotation, yet the translation of this innate skill into algorithmic classification remains suboptimal. This work presents a human-guided learning methodology to learn binary word sentiment classifiers from fewer interactions with humans. We introduce a human model that relates a word's perceived sentiment to the distance between the word and the unknown classifier. This model informs the design of queries that capture more nuanced information than the traditional queries solely requesting labels. Together with active learning strategies, our approach reduces human effort without sacrificing learning fidelity. We validate our method with theoretical analysis, providing sample complexity bounds. We also perform experiments with human data, demonstrating the effectiveness of our method in improving the accuracy of binary sentiment word classification.
+Integrating human expertise into machine learning systems often reduces the role of experts to labeling oracles, a paradigm that limits the amount of information exchanged and fails to capture the nuance of human judgment. We propose a human-in-the-loop framework to learn binary classifiers with richer query types, specifically item ranking and exemplar selection. We introduce probabilistic human response models for these rich queries based on the relationship observed between the perceived implicit score of an item and the distance from its embedding to the unknown classifier. With these models, we design active learning algorithms that leverage the rich queries to increase the information gained per interaction. We provide theoretical bounds on sample complexity and develop a tractable and computationally efficient variational approximation for Bayesian updates. We further extend active learning strategies to select queries that maximize information rate, explicitly balancing informational value against annotation cost. Through experiments with simulated annotators derived from crowdsourced word-sentiment and image-aesthetic datasets, we demonstrate significant reductions on sample complexity. Our cost-aware algorithm in the word sentiment classification task reduces annotation time by more than 57\% compared to traditional label-only active learning. 
 
 ## Requirements
 
@@ -56,4 +56,5 @@ Figure 3 in the paper shows the results of Algorithm 2. To replicate the figure 
 ## Contact Information 
 
 Email: burcelay3@gatech.edu
+
 
