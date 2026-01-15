@@ -14,14 +14,15 @@ Matlab R2023a with
 - Parallel Computing Toolbox version 7.7
 
 ## MATLAB
-The folder 'matlab' contains the implementation of the Algorithm in MATLAB.
+The folder 'matlab' contains the implementation of the Algorithms 2 and 3 in MATLAB for the word sentiment and image aesthetic classification tasks. It also reproduces the experiments that support the human model in Assumption 1. This is the main code implementation.
 
 ## Python
-The folder 'python' contains an equivalent implementation of the code in Python. It reproduces the main algorithm and experiments from the MATLAB version using Python libraries.
+The folder 'python' contains an equivalent implementation of the code in Python. It reproduces the main algorithm and experiments for the word sentiment experiments from the MATLAB version using Python libraries.
 
 ## Contact Information 
 
 Email: burcelay3@gatech.edu
+
 
 
 
