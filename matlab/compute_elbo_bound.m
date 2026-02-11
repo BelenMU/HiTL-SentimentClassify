@@ -1,5 +1,5 @@
 function [elbo] =  compute_elbo_bound(mu_q, sigma_inv, S, sigma, prior_muxsigma, x, w)
-%MU_UPDATE_GIVEN_X computes an upperbound on the Evidence Lower BOund (ELBO).
+%MU_UPDATE_GIVEN_X computes a lower bound on the Evidence Lower BOund (ELBO).
 %
 % Input arguments:
 % mu_q            - Mean of variational distribution.
@@ -29,4 +29,5 @@ function [elbo] =  compute_elbo_bound(mu_q, sigma_inv, S, sigma, prior_muxsigma,
         disp("ELBO out Inf")
     end
     elbo = double(elbo);
+
 end
